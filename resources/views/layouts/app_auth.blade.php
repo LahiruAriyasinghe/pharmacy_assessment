@@ -57,7 +57,6 @@
             <!-- End of Sidebar -->
             <div id="page-content-wrapper">
                 <!-- Topbar -->
-                @yield('topNavBar', View::make('layouts.topNavBar'))
                 <!-- End of Topbar -->
                 <!-- Main Content -->
                 <div id="content">

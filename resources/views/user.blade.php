@@ -7,6 +7,8 @@
     <div class="page-title-btn">
         <div class="page-title-with-button"><span><img class="page-title-icon"
                     src="{{ asset('img/pharmacy.svg') }}"></span>Ayubo Pharmacy</div>
+        <Button type="button" class="btn btn-primary" onclick="window.location='{{ route("create_prescription") }}'">New
+            Prescription</Button>
     </div>
     <hr>
 </div>
@@ -21,8 +23,7 @@
                     <th>User Name</th>
                     <th>Note</th>
                     <th>Address</th>
-                    <th>Quotation</th>
-                    <th>User Review</th>
+                    <th>Accept/Rejected</th>
                     <th>Time</th>
                     <th>Actions</th>
                 </tr>
@@ -47,23 +48,24 @@
 <script>
 var table = null;
 
-$(document).ready(function($) {
-            var table = $('.yajra-datatable').DataTable({
-                processing: true,
-                serverSide: true,
-                ajax: "{{ route('time.list') }}",
-                columns: [
-                    {data: 'DT_RowIndex', name: 'DT_RowIndex'},
-                    {data: 'user', name: 'user_id'},
-                    {data: 'note', name: 'note'},
-                    {data: 'address', name: 'address'},
-                    {data: 'address', name: 'address'},
-                    {data: 'quotaion', name: 'quotaion'},
-                    {data: 'time', name: 'time'},
-                    {data: 'action', name: 'action'},
-                ],
-             
-            });
+$(document).ready(function() {
+
+    var table = $('.yajra-datatable').DataTable({
+        processing: true,
+        serverSide: true,
+        ajax: "{{ route('user.list') }}",
+        columns: [
+            {data: 'DT_RowIndex', name: 'DT_RowIndex'},
+            {data: 'user', name: 'user_id'},
+            {data: 'note', name: 'note'},
+            {data: 'address', name: 'address'},
+            {data: 'quotaion', name: 'quotaion'},
+            {data: 'time', name: 'time'},
+            {data: 'action', name: 'action'},
+        ],
+        
+    });
+  
 });
 
 
