@@ -1,0 +1,24 @@
+@import "variables";
+
+.nav-bar-color {
+    background-color: $lightBlue;
+}
+.nav-bar-hospital-position {
+    font-size: 14px;
+    margin-right: 20px;
+    background: #94c6e4;
+    padding: 8px;
+    border-radius: 5px;
+    color: black !important;
+}
+
+.nav-bar-user-position {
+    font-size: 16px;
+    margin-right: 20px;
+    padding: 8px;
+    border-radius: 5px;
+    color: $burnedBlueGreyTitle;
+}
+.guest-logo {
+    max-height: 50px;
+}

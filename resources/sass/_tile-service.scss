@@ -1,0 +1,106 @@
+@import "variables";
+
+.btn-squre {
+    cursor: pointer;
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    border-radius: 2px;
+    background: $primary;
+    border: 2px solid $primary;
+
+    .tile-title {
+        font-size: 24px;
+        font-weight: 400;
+        padding-left: 16px;
+        color: white;
+    }
+
+    .tile-icon {
+        height: 60px;
+    }
+}
+.btn-squre:hover {
+    text-decoration: none;
+    background: $primaryHover;
+    transition: all 0.2s ease-in-out;
+    transform: scale(1.01);
+}
+.btn-squre:active {
+    text-decoration: none;
+    background: $primaryActive;
+    transition: all 0.2s ease-in-out;
+    transform: scale(1.01);
+}
+
+.btn-squre-regular {
+    cursor: pointer;
+    display: flex !important;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px;
+    border-radius: 2px;
+    background: $burnedBlueGrey;
+    border: 2px solid $burnedBlueGreyBorder;
+
+    .tile-title {
+        font-size: 24px;
+        font-weight: 400;
+        padding-left: 16px;
+        color: $burnedBlueGreyTitle;
+    }
+
+    .tile-icon {
+        height: 60px;
+    }
+}
+.btn-squre-regular:hover {
+    text-decoration: none;
+    // background: $primaryHover;
+    transition: all 0.2s ease-in-out;
+    transform: scale(1.01);
+}
+.btn-squre-regular:active {
+    text-decoration: none;
+    // background: $primaryActive;
+    transition: all 0.2s ease-in-out;
+    transform: scale(1.01);
+}
+
+// Role Card
+
+.permisions-role-card {
+    padding: 16px;
+    border-radius: 4px;
+    background-color: $coralBlue;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 16px;
+    .row{
+        width:100%;
+    }
+}
+.permisions-role-card-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+    border-bottom: 1px solid $burnedBlueGrey;
+}
+.permisions-role-card-title {
+    font-size: 14px;
+    color: $font-light-grey;
+    margin-left: 6px;
+    font-weight: 300;
+}
+.permisions-title-highlight {
+    font-size: 17px;
+    font-weight: 600;
+}
+.permisions-role-card-input {
+    display: flex;
+    justify-content: space-between;
+}
+
+// Role Card
