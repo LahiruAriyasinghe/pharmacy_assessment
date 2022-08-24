@@ -41,20 +41,6 @@ class UserPrescriptionController extends Controller
     }
 
 
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-    */
-    public function viewQuotation($id)
-    {
-        $quotation = Quotation::where('id',$id)->get();
-        return view('viewquotation')
-        ->with('quotation', $quotation);
-    }
-
-    
-
     public function displayImage($filename)
     {
         $path = storage_path('app/'. $filename); 
@@ -78,26 +64,6 @@ class UserPrescriptionController extends Controller
     {
 
     }
-
-    public function acceptQuotation(Request $request)
-    {
-
-        // dd($request->id);
-        if ($request->ajax()) {
-
-            $results = Quotation::where('id', $request->id)
-                ->update([
-                    'user_approved' => $request->accept
-                    ]);
-        }
-
-        return [
-            'success' => true,
-            // 'next' => route('invoice'),
-            'msg' => 'Quotation Status Changed successfully',
-        ];
-
-    }
     
 
     public function getUserList(Request $request)
@@ -119,7 +85,7 @@ class UserPrescriptionController extends Controller
                                     if($row->quotation != null){
                                         $btn = '<a href='.route('view_prescription', $row->quotation->id).' class="edit btn btn-info btn-sm">View Quotation</a>';
                                     }else{
-                                        $btn = '<a href="" class="edit btn btn-danger btn-sm">Delete</a>';
+                                        $btn = 'Pending';
  
                                     }
                 
@@ -201,34 +167,7 @@ class UserPrescriptionController extends Controller
         }
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function storeQuotation(Request $request)
-    {
-
-        $validator = Validator::make($request->all(), [
-            'name' => 'required|array|min:1',
-        ]);        
-        if ($validator->fails())
-        {
-            return response()->json(['errors'=>$validator->errors()->all()]);
-        }
-        $quotationPharmacy = new Quotation;
-        $quotationPharmacy->prescription_id = $request->prescription_id;
-        $quotationPharmacy->data = json_encode($request->name);
-        $quotationPharmacy->total = $request->product_total;
-        $quotationPharmacy->save();
-        return [
-            'success' => true,
-            // 'next' => route('invoice'),
-            'msg' => 'Quotation Stored successful',
-        ];
-
-    }
+  
 
     /**
      * Store a newly created resource in storage.

@@ -12,7 +12,7 @@
             <div class="">
                 <div class="card-body">
                     <div class="d-flex justify-content-center">
-                        <img class="login-logo-img" src="{{ asset('img/logo.png') }}" />
+                        <img class="login-logo-img" src="{{ asset('img/logo1.jpg') }}"/>
                     </div>
                     <div class="login-hospital-title">{{ __('Login') }}</div>
 

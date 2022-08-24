@@ -38,8 +38,7 @@
                 <tr>
                     <th>Item description</th>
                     <th>Quantity</th>
-                    <th>Unit Price (LKR)</th>
-                    <th>Amount (LKR)</th>
+                    <th>Price (LKR)</th>
                 </tr>
             </thead>
         </table>
@@ -77,7 +76,7 @@ function accept(i){
             id: $('#quotation_id').val()
         },
         success: function(data){
-            window.open('/home');
+            window.location.href = '/home';
         }
         
     });
@@ -102,8 +101,12 @@ $(document).ready(function($) {
     });
     var $myTable = $('#productTable');
     var t = $myTable.DataTable();
-    for(let i=0;i<tableItems.length;i++){
-        t.row.add([JSON.parse(tableItems[i])[0].name, JSON.parse(tableItems[i])[0].quantity, JSON.parse(tableItems[i])[0].price, JSON.parse(tableItems[i])[0].price * JSON.parse(tableItems[i])[0].quantity]).draw(false);
+
+ 
+    for(let i=0;i<JSON.parse(tableItems[0]).length;i++){
+        console.log(JSON.parse(tableItems[0])[i].name);
+
+        t.row.add([JSON.parse(tableItems[0])[i].name, JSON.parse(tableItems[0])[i].quantity, JSON.parse(tableItems[0])[i].price]).draw(false);
     }
   
 });

@@ -8,9 +8,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'AyuboHealth') }}
-        @auth @isset(Auth::user()->hospital) &bull; {{Auth::user()->hospital->name}} @endisset @endauth
-        &bull; @yield('title')
+    <title>{{ config('app.name', 'Ayubo Pharmacy') }}
     </title>
 
     <!-- favicon -->
