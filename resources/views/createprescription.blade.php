@@ -115,7 +115,7 @@ $(document).ready(function() {
             success: (response) => {
                 console.log(response);
                 if (response.success) {
-                    window.open(response.url);
+                    window.location.href = response.url;
                 }
             },
             error: function(response){
