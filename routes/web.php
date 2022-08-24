@@ -32,4 +32,4 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('prescription/list', 'UserPrescriptionController@getList')->name('time.list');
     Route::get('prescription/edit/{id}', 'UserPrescriptionController@editPrescription')->name('edit_prescription');
     Route::post('/quotation/store', 'QuotationController@store')->name('store_quotation');
-});
+}); 

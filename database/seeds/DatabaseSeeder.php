@@ -11,21 +11,6 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        $this->call([
-            HospitalSeeder::class,
-            RolesPermissionsSeeder::class,
-            // PharmacistRoleSeeder::class,
-            SpecialtySeeder::class,
-            UserSeeder::class,
-            PatientSeeder::class,
-            InvoiceTypeSeeder::class,
-            HospitalFeesSeeder::class,
-            // LabReportSeeder::class,
-            OtherServiceSeeder::class,
-            ProductTypeSeeder::class,
-            // ProductSeeder::class,
-            // ProductStockSeeder::class,
-            LabReportTestDataSeeder::class,
-        ]);
+    
     }
 }
